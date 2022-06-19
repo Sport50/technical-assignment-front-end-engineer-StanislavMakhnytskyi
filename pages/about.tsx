@@ -1,11 +1,11 @@
-import * as React from 'react';
-import type {NextPage} from 'next';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Link from '../components/Link';
-import Copyright from '../components/Copyright';
+import * as React from 'react'
+import type { NextPage } from 'next'
+import Container from '@mui/material/Container'
+import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Link from '../components/Link'
+import Copyright from '../components/Copyright'
 
 const About: NextPage = () => {
   return (
@@ -27,10 +27,10 @@ const About: NextPage = () => {
             Go to the home page
           </Button>
         </Box>
-        <Copyright/>
+        <Copyright />
       </Box>
     </Container>
-  );
-};
+  )
+}
 
-export default About;
+export default About
