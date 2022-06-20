@@ -8,7 +8,7 @@ import Copyright from '../components/Copyright'
 
 const Home: NextPage = () => {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="md">
       <Box
         sx={{
           my: 4,
@@ -19,10 +19,13 @@ const Home: NextPage = () => {
         }}
       >
         <Typography variant="h4" component="h1" gutterBottom>
-          MUI v5 + Next.js with TypeScript example
+          Technical assignment front-end engineer
         </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
+        <Link href="/articles" color="secondary">
+          Go to the articles page
+        </Link>
+        <Link href="/create-article" color="secondary">
+          Go to the create article form
         </Link>
         <Copyright />
       </Box>

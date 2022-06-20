@@ -1,15 +1,19 @@
 import * as React from 'react'
+import dynamic from 'next/dynamic'
 import type { NextPage } from 'next'
-import Container from '@mui/material/Container'
-import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
 import Link from '../components/Link'
+import Button from '@mui/material/Button'
+import Container from '@mui/material/Container'
 import Copyright from '../components/Copyright'
 
-const About: NextPage = () => {
+const ArticlesGrid = dynamic(() => import('../components/ArticlesGrid'), {
+  ssr: false,
+})
+
+const Articles: NextPage = () => {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="md">
       <Box
         sx={{
           my: 4,
@@ -19,10 +23,13 @@ const About: NextPage = () => {
           alignItems: 'center',
         }}
       >
-        <Typography variant="h4" component="h1" gutterBottom>
-          MUI v5 + Next.js with TypeScript example
-        </Typography>
-        <Box maxWidth="sm">
+        <ArticlesGrid />
+        <Box
+          maxWidth="sm"
+          sx={{
+            my: 4,
+          }}
+        >
           <Button variant="contained" component={Link} noLinkStyle href="/">
             Go to the home page
           </Button>
@@ -33,4 +40,4 @@ const About: NextPage = () => {
   )
 }
 
-export default About
+export default Articles
