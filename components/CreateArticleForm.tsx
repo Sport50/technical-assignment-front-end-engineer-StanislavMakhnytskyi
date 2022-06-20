@@ -5,6 +5,8 @@ import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker'
+import { useRecoilRefresher_UNSTABLE } from 'recoil'
+import { allArticlesState } from '../src/state'
 import { postArticle } from '../api/articles'
 import { IArticle } from '../types/article'
 
@@ -20,9 +22,11 @@ export default function CreateArticleForm() {
   useEffect(() => {
     register('date', { required: 'Date is required' })
   }, [register])
+  const refreshArticlesLoadable = useRecoilRefresher_UNSTABLE(allArticlesState)
 
   const onSubmit = async (formData: Omit<IArticle, 'id'>) => {
     await postArticle(formData)
+    refreshArticlesLoadable()
     setDate(null)
     reset()
   }

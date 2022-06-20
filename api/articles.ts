@@ -19,9 +19,7 @@ export async function getArticles() {
 
 export async function postArticle(article: Omit<IArticle, 'id'>) {
   try {
-    const response = await axios.post<IArticle[]>(articlesUrl, {
-      body: article,
-    })
+    const response = await axios.post<IArticle[]>(articlesUrl, article)
     return response.data || []
   } catch (error) {
     throw new Error(
