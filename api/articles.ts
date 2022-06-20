@@ -17,7 +17,7 @@ export async function getArticles() {
   }
 }
 
-export async function postArticles(article: IArticle) {
+export async function postArticle(article: Omit<IArticle, 'id'>) {
   try {
     const response = await axios.post<IArticle[]>(articlesUrl, {
       body: article,

@@ -3,6 +3,7 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import { IArticle } from '../types/article'
+import { format } from 'date-fns'
 
 interface Props extends Omit<IArticle, 'id'> {}
 
@@ -25,7 +26,7 @@ export default function Article({ title, body, email, date }: Props) {
           {email}
         </Typography>
         <Typography variant="body2" component="time">
-          {date}
+          {format(new Date(date), 'MM/dd/yyyy')}
         </Typography>
       </CardContent>
     </Card>
